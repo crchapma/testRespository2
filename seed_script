@@ -17,6 +17,6 @@ job('generated_trigger_job_with_parameter') {
     shell('echo $Object')
   }
   publishers {
-    downstream('generated_job_with_parameter', 'SUCCESS')
+    downstream('generated_job_with_parameter', 'SUCCESS', 'Object=$Object')
   }
 }
