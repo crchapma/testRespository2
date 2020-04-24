@@ -21,5 +21,6 @@ job('generated_trigger_job_with_parameter') {
       trigger('generated_job_with_parameter')
       parameters {
         predefinedProp('Object','$Object')
+        }
   }
 }
