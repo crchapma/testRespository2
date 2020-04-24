@@ -1,0 +1,22 @@
+job('generated_job_with_parameter') {
+  parameters {
+    stringParam('Object', 'Undescribed', 'This parameter describes a type of object')
+  }
+  steps{
+    shell('echo $JOB_NAME $BUILD_NUMBER')
+    shell('echo $Object')
+  }
+}
+               
+job('generated_trigger_job_with_parameter') {
+  parameters {
+    stringParam('Object', 'Undescribed', 'This parameter describes a type of object')
+  }
+  steps{
+    shell('echo $JOB_NAME $BUILD_NUMBER')
+    shell('echo $Object')
+  }
+  publishers {
+    downstream('generated_job_with_parameter', 'SUCCESS')
+  }
+}
