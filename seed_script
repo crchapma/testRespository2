@@ -17,6 +17,9 @@ job('generated_trigger_job_with_parameter') {
     shell('echo $Object')
   }
   publishers {
-    downstream('generated_job_with_parameter', 'SUCCESS', 'Object=$Object')
+    downstreamParameterized {
+      trigger('generated_job_with_parameter')
+      parameters {
+        predefinedProp('Object','$Object')
   }
 }
