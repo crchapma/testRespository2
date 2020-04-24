@@ -18,9 +18,11 @@ job('generated_trigger_job_with_parameter') {
   }
   publishers {
     downstreamParameterized {
-      trigger('generated_job_with_parameter')
-      parameters {
-        predefinedProp('Object','$Object')
+      trigger('generated_job_with_parameter') {
+        parameters {
+          predefinedProp('Object','$Object')
         }
+      }
+    }
   }
 }
